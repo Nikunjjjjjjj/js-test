@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:#212121; color: #fff;">
+    <ul class="language">
+        <li>javascript</li>
+        <!-- <li> python</li>
+        <li>java</li>
+        <li>c++</li> -->
+    </ul>
+    
+</body>
+<script>
+    function addelement(lang) {
+        const li= document.createElement('li')
+        //li.innerHTML= `${lang}`   //also   //in this whole tree is traversed
+        li.appendChild(document.createTextNode(lang)) //it is more optimized
+        document.querySelector('.language').appendChild(li)
+        
+    }
+    addelement("pythonjava")
+    addelement("java")
+
+
+    //edit
+    const secondlang=document.querySelector("li:nth-child(2)")
+    //secondlang.innerHTML="Mojo"
+    const newli=document.createElement('li')
+    newli.textContent="mojo"
+    secondlang.replaceWith(newli)
+
+    //remove
+    const lastlang=document.querySelector('li:last-child')
+    lastlang.remove()    
+</script>
+</html>
